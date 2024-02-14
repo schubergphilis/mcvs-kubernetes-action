@@ -1,0 +1,14 @@
+---
+name: mcvs-kubernetes-action
+description: |
+  The Mission Critical Vulnerability Scanner (MCVS) Kubernetes action.
+runs:
+  using: 'composite'
+  steps:
+    #
+    # Verify YAML.
+    #
+    - shell: bash
+      run: |
+        pip install --user yamllint==1.34.0
+        yamllint .
